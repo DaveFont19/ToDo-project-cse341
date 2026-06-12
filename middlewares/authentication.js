@@ -1,9 +1,12 @@
-const ensureAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated && req.isAuthenticated()) {
+const authentication = (req, res, next) => {
+  if (req.user) {
     return next();
   }
 
-  return res.status(401).json({ message: 'Authentication required' });
+  return res.status(401).json({
+    success: false,
+    message: "Unauthorized",
+  });
 };
 
-module.exports = { ensureAuthenticated };
+module.exports = authentication;
