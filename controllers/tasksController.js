@@ -147,7 +147,7 @@ const getTasksByProject = async (req, res, next) => {
     const tasks = await mongodb
       .getDatabase()
       .collection("tasks")
-      .find({ projectId: projectId }) // Es el equivalente a un WHERE projectId = ?
+      .find({ projectId: projectId }) 
       .toArray();
 
     if (tasks.length === 0) {
@@ -171,4 +171,5 @@ module.exports = {
   createTask,
   updateTask,
   deleteTask,
+  getTasksByProject,
 };
