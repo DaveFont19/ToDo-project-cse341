@@ -8,7 +8,7 @@
   "host": "todo-project-cse341-83pb.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
