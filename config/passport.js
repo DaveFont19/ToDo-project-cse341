@@ -1,5 +1,5 @@
 const passport = require('passport');
-//const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
 const mongodb = require('../config/database');
 const { ObjectId } = require('mongodb');
@@ -26,7 +26,7 @@ passport.deserializeUser(async (id, done) => {
 });
 
 
-/* // GOOGLE STRATEGY
+ // GOOGLE STRATEGY
 passport.use(new GoogleStrategy(
   {
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -65,7 +65,7 @@ passport.use(new GoogleStrategy(
       done(err, null);
     }
   }
-)); */
+)); 
 
 
 // GITHUB STRATEGY

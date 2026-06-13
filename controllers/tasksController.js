@@ -137,6 +137,34 @@ const deleteTask = async (req, res, next) => {
   }
 };
 
+
+// GET TASKS BY PROJECT ID
+const getTasksByProject = async (req, res, next) => {
+  // #swagger.tags = ['Tasks']
+  try {
+    const projectId = req.params.projectId;
+
+    const tasks = await mongodb
+      .getDatabase()
+      .collection("tasks")
+      .find({ projectId: projectId }) // Es el equivalente a un WHERE projectId = ?
+      .toArray();
+
+    if (tasks.length === 0) {
+      return res.status(404).json({ message: "No tasks found for this project" });
+    }
+
+    res.status(200).json(tasks);
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = {
+  // ... tus otros exports
+  getTasksByProject
+};
+
 module.exports = {
   getAllTasks,
   getSingleTask,

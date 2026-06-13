@@ -6,6 +6,9 @@ const authMiddleware = require("../middlewares/authentication");
 
 const router = express.Router();
 
+
+
+
 const tasksValidation = [
   body("title").trim().notEmpty().withMessage("Title is required"),
   body("description").trim().notEmpty().withMessage("Description is required"),
@@ -20,6 +23,14 @@ const idValidation = [
 ];
 
 router.get("/", tasksController.getAllTasks);
+
+
+
+router.get(
+  "/project/:projectId",
+  
+  tasksController.getTasksByProject
+);
 
 router.get(
   "/:id",
