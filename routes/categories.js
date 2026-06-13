@@ -10,7 +10,6 @@ const categoriesValidation = [
   body("name").trim().notEmpty().withMessage("Name is required"),
   body("description").trim().notEmpty().withMessage("Description is required"),
   body("color").optional().isString(),
-  body("userId").notEmpty().withMessage("User ID is required"),
 ];
 
 const idValidation = [

@@ -12,9 +12,7 @@ const tasksValidation = [
   body("status").trim().notEmpty().withMessage("Status is required"),
   body("priority").trim().notEmpty().withMessage("Priority is required"),
   body("dueDate").notEmpty().withMessage("Due date is required"),
-  body("categoryId").notEmpty().withMessage("Category ID is required"),
   body("projectId").optional().isString(),
-  body("userId").notEmpty().withMessage("User ID is required"),
 ];
 
 const idValidation = [
