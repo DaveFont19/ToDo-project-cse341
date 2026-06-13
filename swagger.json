@@ -5,10 +5,10 @@
     "description": "API for categories and tasks",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "todo-project-cse341-83pb.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
