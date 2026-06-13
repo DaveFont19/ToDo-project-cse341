@@ -22,7 +22,7 @@ router.get(
     session: true
   }),
   (req, res) => {
-    res.send('✅ Google Auth successful, Welcome ${req.user.firstName}');
+    res.send(`✅ Google Auth successful, Welcome ${req.user.firstName}`);
   }
 );
 
