@@ -1,12 +1,9 @@
 const authentication = (req, res, next) => {
-  if (req.user) {
-    return next();
-  }
+    if (req.session.user === undefined) {
+        return res.status(401).json("You do not have access.");
+    }
 
-  return res.status(401).json({
-    success: false,
-    message: "Unauthorized",
-  });
+    next();
 };
 
 module.exports = authentication;
