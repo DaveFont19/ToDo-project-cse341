@@ -1,20 +1,28 @@
-const {ObjectId} = require('mongodb');
+const { ObjectId } = require('mongodb');
 const mongodb = require('../config/database');
 const collectionName = 'categories';
 
-const getAllCategories = async (req,res,next) =>{
+// GET ALL
+const getAllCategories = async (req, res, next) => {
   // #swagger.tags = ['Categories']
-    try{
-        const categories = await mongodb.getDatabase().collection(collectionName).find().toArray();
-        res.status(200).json(categories);
-    }catch(error){
-        next(error);
-    }
+  try {
+    const categories = await mongodb
+      .getDatabase()
+      .collection(collectionName)
+      .find()
+      .toArray();
+
+    res.status(200).json(categories);
+  } catch (error) {
+    next(error);
+  }
 };
+
+// GET ONE
 const getSingleCategory = async (req, res, next) => {
   // #swagger.tags = ['Categories']
   try {
-    const categoryId = req.params.id;
+    const categoryId = req.params.id; 
 
     if (!ObjectId.isValid(categoryId)) {
       return res.status(400).json({ message: 'Invalid category ID' });
@@ -72,26 +80,28 @@ const updateCategory = async (req, res, next) => {
     const category = {
       name: req.body.name,
       description: req.body.description,
-      color: req.body.color,
-      userId: req.body.userId,
-      updatedAt: new Date()
+      color: req.body.color
     };
 
     const response = await mongodb
       .getDatabase()
       .collection(collectionName)
-      .replaceOne({ _id: new ObjectId(categoryId) }, category);
+      .replaceOne(
+        { _id: new ObjectId(categoryId) },
+        category
+      );
 
     if (response.matchedCount === 0) {
       return res.status(404).json({ message: 'Category not found' });
     }
 
-    res.status(204).send();
+    res.status(200).json({ message: 'Category updated successfully' });
   } catch (err) {
     next(err);
   }
 };
 
+// DELETE
 const deleteCategory = async (req, res, next) => {
   // #swagger.tags = ['Categories']
   try {
@@ -110,7 +120,7 @@ const deleteCategory = async (req, res, next) => {
       return res.status(404).json({ message: 'Category not found' });
     }
 
-    res.status(204).send();
+    res.status(200).json({ message: 'Category deleted successfully' });
   } catch (err) {
     next(err);
   }
