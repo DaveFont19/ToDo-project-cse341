@@ -49,9 +49,7 @@ const createCategory = async (req, res, next) => {
     const category = {
       name: req.body.name,
       description: req.body.description,
-      color: req.body.color,
-      userId: req.body.userId,
-      createdAt: new Date()
+      color: req.body.color
     };
 
     const response = await mongodb
