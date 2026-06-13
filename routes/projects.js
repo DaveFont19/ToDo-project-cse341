@@ -13,7 +13,7 @@ const projectsValidation = [
     .notEmpty()
     .withMessage("Description is required"),
   body("status").trim().notEmpty().withMessage("Status is required"),
-  body("createDate").notEmpty().withMessage("Created date is required"),
+  body("createdAt").notEmpty().withMessage("Created date is required"),
   body("endDate").optional(),
   body("userId").notEmpty().withMessage("User ID is required"),
 ];
