@@ -26,7 +26,7 @@ passport.deserializeUser(async (id, done) => {
 });
 
 
-// ✅ GOOGLE STRATEGY
+// GOOGLE STRATEGY
 passport.use(new GoogleStrategy(
   {
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -68,7 +68,7 @@ passport.use(new GoogleStrategy(
 ));
 
 
-// ✅ GITHUB STRATEGY
+// GITHUB STRATEGY
 passport.use(new GitHubStrategy(
   {
     clientID: process.env.GITHUB_CLIENT_ID,

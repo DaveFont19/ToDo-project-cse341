@@ -22,7 +22,7 @@ router.get(
     session: true
   }),
   (req, res) => {
-    res.send('Google Auth successful ✅');
+    res.send('✅ Google Auth successful, Welcome ${req.user.firstName}');
   }
 );
 
@@ -47,7 +47,7 @@ router.get(
     session: true
   }),
   (req, res) => {
-    res.send('GitHub Auth successful ✅');
+    res.send(`✅ GitHub Auth successful, Welcome ${req.user.firstName || req.user.username}`);
   }
 );
 
