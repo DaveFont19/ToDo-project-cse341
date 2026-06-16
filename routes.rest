@@ -1,15 +1,22 @@
+@localUrl = http://localhost:3000
+@renderUrl = https://todo-project-cse341-83pb.onrender.com
+
 ### =========================
-### CATEGORIES
+### CATEGORIES - LOCAL
 ### =========================
 
 ### Get all categories
-GET http://localhost:3000/categories
+GET {{localUrl}}/categories
+
+###
 
 ### Get single category
-GET http://localhost:3000/categories/6a2ca42c1abe44f995c5389b
+GET {{localUrl}}/categories/6a2ca42c1abe44f995c5389b
+
+###
 
 ### Create category
-POST http://localhost:3000/categories
+POST {{localUrl}}/categories
 Content-Type: application/json
 
 {
@@ -18,8 +25,10 @@ Content-Type: application/json
   "color": "#3B82F6"
 }
 
+###
+
 ### Update category
-PUT http://localhost:3000/categories/
+PUT {{localUrl}}/categories/6a2ca42c1abe44f995c5389b
 Content-Type: application/json
 
 {
@@ -28,70 +37,183 @@ Content-Type: application/json
   "color": "#FF0000"
 }
 
-### Delete category
-DELETE http://localhost:3000/categories/
+###
 
----
+### Delete category
+DELETE {{localUrl}}/categories/6a2ca42c1abe44f995c5389b
+
+
+
+###
+### =========================
+### CATEGORIES - RENDER
+### =========================
+
+### Get all categories
+GET {{renderUrl}}/categories
+
+###
+
+### Get single category
+GET {{renderUrl}}/categories/6a2ca42c1abe44f995c5389b
+
+###
+
+### Create category
+POST {{renderUrl}}/categories
+Content-Type: application/json
+
+{
+  "name": "Work",
+  "description": "Work related tasks",
+  "color": "#3B82F6"
+}
+
+###
+
+### Update category
+PUT {{renderUrl}}/categories/6a2ca42c1abe44f995c5389b
+Content-Type: application/json
+
+{
+  "name": "Work Updated",
+  "description": "Updated description",
+  "color": "#FF0000"
+}
+
+###
+
+### Delete category
+DELETE {{renderUrl}}/categories/6a2ca42c1abe44f995c5389b
+
+
+###
 
 ### =========================
-### PROJECTS
+### PROJECTS - LOCAL
 ### =========================
 
 ### Get all projects
-GET http://localhost:3000/projects
+GET {{localUrl}}/projects
+
+###
 
 ### Get single project
-GET http://localhost:3000/projects/6a2ca4cb1abe44f995c538a2
+GET {{localUrl}}/projects/
+
+###
 
 ### Create project
-POST http://localhost:3000/projects
+POST {{localUrl}}/projects
 Content-Type: application/json
 
 {
   "name": "Backend API",
   "description": "Project for ToDo App",
   "status": "In Progress",
-  "categoryId": "6a2ca42c1abe44f995c5389b",
-  "userId": "6a2ca3501abe44f995c53898",
+  "categoryId": "",
+  "userId": "",
   "startDate": "2026-06-01",
   "endDate": "2026-07-01",
   "createdAt": "2026-06-10",
   "updatedAt": "2026-06-10"
 }
 
+###
+
 ### Update project
-PUT http://localhost:3000/projects/
+PUT {{localUrl}}/projects/
 Content-Type: application/json
 
 {
   "name": "Backend API Updated",
   "description": "Updated project",
   "status": "Completed",
-  "categoryId": "6a2ca42c1abe44f995c5389b",
-  "userId": "6a2ca3501abe44f995c53898",
+  "categoryId": "",
+  "userId": "",
   "startDate": "2026-06-01",
   "endDate": "2026-07-10",
   "createdAt": "2026-06-10",
   "updatedAt": "2026-06-12"
 }
 
-### Delete project
-DELETE http://localhost:3000/projects/
+###
 
----
+### Delete project
+DELETE {{localUrl}}/projects/
+
+###
+### =========================
+### PROJECTS - RENDER
+### =========================
+
+### Get all projects
+GET {{renderUrl}}/projects
+
+###
+
+### Get single project
+GET {{renderUrl}}/projects/
+
+###
+
+### Create project
+POST {{renderUrl}}/projects
+Content-Type: application/json
+
+{
+  "name": "Backend API",
+  "description": "Project for ToDo App",
+  "status": "In Progress",
+  "categoryId": "",
+  "userId": "",
+  "startDate": "2026-06-01",
+  "endDate": "2026-07-01",
+  "createdAt": "2026-06-10",
+  "updatedAt": "2026-06-10"
+}
+
+###
+
+### Update project
+PUT {{renderUrl}}/projects/
+Content-Type: application/json
+
+{
+  "name": "Backend API Updated",
+  "description": "Updated project",
+  "status": "Completed",
+  "categoryId": "",
+  "userId": "",
+  "startDate": "2026-06-01",
+  "endDate": "2026-07-10",
+  "createdAt": "2026-06-10",
+  "updatedAt": "2026-06-12"
+}
+
+###
+
+### Delete project
+DELETE {{renderUrl}}/projects/
+
+###
 
 ### =========================
-### TASKS
+### TASKS - LOCAL
 ### =========================
 
 ### Get all tasks
-GET http://localhost:3000/tasks
+GET {{localUrl}}/tasks
+
+###
 
 ### Get single task
-GET http://localhost:3000/tasks/6a2ca5521abe44f995c538a4
+GET {{localUrl}}/tasks/
+
+###
 
 ### Create task
-POST http://localhost:3000/tasks
+POST {{localUrl}}/tasks
 Content-Type: application/json
 
 {
@@ -105,8 +227,10 @@ Content-Type: application/json
   "updatedAt": "2026-06-10"
 }
 
+###
+
 ### Update task
-PUT http://localhost:3000/tasks/
+PUT {{localUrl}}/tasks/
 Content-Type: application/json
 
 {
@@ -120,23 +244,81 @@ Content-Type: application/json
   "updatedAt": "2026-06-12"
 }
 
-### Delete task
-DELETE http://localhost:3000/tasks/
+###
 
----
+### Delete task
+DELETE {{localUrl}}/tasks/
+
+###
+### =========================
+### TASKS - RENDER
+### =========================
+
+### Get all tasks
+GET {{renderUrl}}/tasks
+
+###
+
+### Get single task
+GET {{renderUrl}}/tasks/
+
+###
+
+### Create task
+POST {{renderUrl}}/tasks
+Content-Type: application/json
+
+{
+  "title": "Implement MongoDB",
+  "description": "Create connection layer",
+  "status": "Pending",
+  "priority": "High",
+  "dueDate": "2026-06-15",
+  "projectId": "",
+  "createdAt": "2026-06-10",
+  "updatedAt": "2026-06-10"
+}
+
+###
+
+### Update task
+PUT {{renderUrl}}/tasks/
+Content-Type: application/json
+
+{
+  "title": "Implement MongoDB Updated",
+  "description": "Improved connection layer",
+  "status": "Completed",
+  "priority": "Medium",
+  "dueDate": "2026-06-20",
+  "projectId": "",
+  "createdAt": "2026-06-10",
+  "updatedAt": "2026-06-12"
+}
+
+###
+
+### Delete task
+DELETE {{renderUrl}}/tasks/
+
+###
 
 ### =========================
-### USERS
+### USERS - LOCAL
 ### =========================
 
 ### Get all users
-GET http://localhost:3000/users
+GET {{localUrl}}/users
+
+###
 
 ### Get single user
-GET http://localhost:3000/users/6a2ca3501abe44f995c53898
+GET {{localUrl}}/users/
+
+###
 
 ### Create user
-POST http://localhost:3000/users
+POST {{localUrl}}/users
 Content-Type: application/json
 
 {
@@ -150,8 +332,10 @@ Content-Type: application/json
   "createdAt": "2026-06-10"
 }
 
+###
+
 ### Update user
-PUT http://localhost:3000/users/
+PUT {{localUrl}}/users/
 Content-Type: application/json
 
 {
@@ -165,5 +349,59 @@ Content-Type: application/json
   "createdAt": "2026-06-10"
 }
 
+###
+
 ### Delete user
-DELETE http://localhost:3000/users/
+DELETE {{localUrl}}/users/
+
+###
+### =========================
+### USERS - RENDER
+### =========================
+
+### Get all users
+GET {{renderUrl}}/users
+
+###
+
+### Get single user
+GET {{renderUrl}}/users/
+
+###
+
+### Create user
+POST {{renderUrl}}/users
+Content-Type: application/json
+
+{
+  "firstName": "Aaron",
+  "lastName": "Mondragon",
+  "email": "aaron@email.com",
+  "role": "user",
+  "phone": "999999999",
+  "city": "Lima",
+  "lastLogin": "2026-06-12",
+  "createdAt": "2026-06-10"
+}
+
+###
+
+### Update user
+PUT {{renderUrl}}/users/
+Content-Type: application/json
+
+{
+  "firstName": "Aaron Updated",
+  "lastName": "Mondragon",
+  "email": "aaron@email.com",
+  "role": "admin",
+  "phone": "999999999",
+  "city": "Lima",
+  "lastLogin": "2026-06-13",
+  "createdAt": "2026-06-10"
+}
+
+###
+
+### Delete user
+DELETE {{renderUrl}}/users/
