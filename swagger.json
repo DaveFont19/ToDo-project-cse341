@@ -88,9 +88,6 @@
     },
     "/tasks/project/{projectId}": {
       "get": {
-        "tags": [
-          "Tasks"
-        ],
         "description": "",
         "parameters": [
           {
@@ -101,11 +98,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "404": {
-            "description": "Not Found"
+          "default": {
+            "description": ""
           }
         }
       }
@@ -438,9 +432,6 @@
                   "example": "any"
                 },
                 "color": {
-                  "example": "any"
-                },
-                "userId": {
                   "example": "any"
                 }
               }

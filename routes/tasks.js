@@ -25,13 +25,6 @@ const idValidation = [
 router.get("/", tasksController.getAllTasks);
 
 
-
-router.get(
-  "/project/:projectId",
-  
-  tasksController.getTasksByProject
-);
-
 router.get(
   "/:id",
   idValidation,
